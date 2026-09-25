@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B2A4A" />
+  <meta name="description" content="STAR ONE - そらのほしグループの統合デジタルプラットフォーム。すべてを、ひとつに。" />
+  <link rel="icon" href="/star-one/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/star-one/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/star-one/manifest.webmanifest" />
+  <title>STAR ONE | SORA NO HOSHI GROUP</title>
+  <!--
+    GitHub Pages は静的ホスティングのため、/star-one/calendar のような
+    直接URLアクセスに対してデフォルトで404を返す。
+    404.html 側で元のパスをクエリ文字列にエンコードして index.html へリダイレクトし、
+    ここでそのクエリを読み取って History API で本来のパスへ復元する
+    （React Router の SPA 404 回避パターン）。
+  -->
+  <script>
+    (function () {
+      var redirect = sessionStorage.getItem('spa-redirect');
+      if (redirect) {
+        sessionStorage.removeItem('spa-redirect');
+        if (redirect !== location.pathname + location.search + location.hash) {
+          history.replaceState(null, '', redirect);
+        }
+      }
+    })();
+  </script>
+  <!-- ライト/ダークテーマの一瞬のちらつき(FOUC)を防ぐため、描画前に適用する。 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('star-one-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script type="module" crossorigin src="/star-one/assets/index-ByTIJ1JT.js"></script>
+  <link rel="stylesheet" crossorigin href="/star-one/assets/index-CK_QQeno.css">
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>

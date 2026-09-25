@@ -1,0 +1,59 @@
+:root {
+  /* Brand palette — 添付デザイン参考資料のデザインシステムに準拠 */
+  --sora-navy: #0b3091;
+  --sora-navy-deep: #071f5e;
+  --star-blue: #4b9cfb;
+  --star-blue-soft: #eaf3ff;
+  --white: #ffffff;
+  --light-gray: #f5f7fa;
+
+  /* Accent（淡いパステル、控えめに使用） */
+  --accent-coral: #ff9d8a;
+  --accent-gold: #ffc861;
+  --accent-mint: #79d6c4;
+
+  /* Semantic */
+  --bg-app: var(--light-gray);
+  --bg-surface: var(--white);
+  --bg-navy-gradient: linear-gradient(180deg, #0b3091 0%, #143a9e 55%, #4b9cfb 130%);
+  --text-primary: #16213f;
+  --text-secondary: #5c6b8a;
+  --text-inverse: #ffffff;
+  --border-subtle: #e4e9f2;
+  --danger: #e0554f;
+
+  /* Type */
+  --font-base:
+    'BIZ UDPGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
+    'Yu Gothic UI', system-ui, sans-serif;
+  --font-display: var(--font-base);
+
+  /* Radius / shadow / spacing */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-card: 0 4px 20px rgba(11, 48, 145, 0.08);
+  --shadow-float: 0 8px 28px rgba(11, 48, 145, 0.16);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg-app: #0a1024;
+    --bg-surface: #121a35;
+    --text-primary: #eef2ff;
+    --text-secondary: #9aa8cf;
+    --border-subtle: #232c4d;
+    --star-blue-soft: #16244d;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg-app: #0a1024;
+  --bg-surface: #121a35;
+  --text-primary: #eef2ff;
+  --text-secondary: #9aa8cf;
+  --border-subtle: #232c4d;
+  --star-blue-soft: #16244d;
+}
