@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>STAR ONE</title>
+  <script>
+    // GitHub Pages はプロジェクトサイトのサブパス配下で存在しないパスに
+    // アクセスされると、このファイルを404として返す。
+    // ここで元のURLをセッションストレージへ保存し、index.html へ転送する。
+    // index.html 側のスクリプトがそれを読み取り、History API で本来の
+    // パスへ復元することで、React Router のクライアントサイドルーティングと
+    // 直接URLアクセス・リロードの両方を成立させる。
+    sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+    var base = location.pathname.split('/').slice(0, 2).join('/') + '/';
+    location.replace(base);
+  </script>
+</head>
+<body></body>
+</html>
